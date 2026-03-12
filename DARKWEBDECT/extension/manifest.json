@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Intent-Aware BrandShield",
+  "version": "1.0.0",
+  "description": "Intent-aware brand impersonation and phishing protection.",
+  "permissions": ["tabs", "storage", "activeTab", "notifications", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "commands": {
+    "brandshield_safe_back": {
+      "description": "Go back or close unsafe tab",
+      "suggested_key": {
+        "default": "Ctrl+Shift+G"
+      }
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "BrandShield"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

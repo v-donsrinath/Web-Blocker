@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandShield</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="title">BrandShield</div>
+      <div class="subtitle">Running in background</div>
+
+      <div class="card">
+        <div class="row">
+          <div class="label">Notify at</div>
+          <div class="value"><span id="notifyVal">70</span>%</div>
+        </div>
+        <input id="notifyTh" type="range" min="0" max="100" step="1" />
+
+        <div class="row">
+          <div class="label">Pause (overlay) at</div>
+          <div class="value"><span id="pauseVal">80</span>%</div>
+        </div>
+        <input id="pauseTh" type="range" min="0" max="100" step="1" />
+
+        <div class="row">
+          <div class="label">Warn on form focus at</div>
+          <div class="value"><span id="formVal">60</span>%</div>
+        </div>
+        <input id="formTh" type="range" min="0" max="100" step="1" />
+
+        <button id="saveBtn" class="btn">Save</button>
+        <div class="hint">Tip: set low values (10–20%) to test quickly.</div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
+
